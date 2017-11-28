@@ -1,0 +1,85 @@
+channel:
+  RaceChannel:
+    Human:
+      prefix: '&f['
+      suffix: '&f]'
+      channelColor: '&3'
+      channelFormat: '{color}[{nick}] &f{prefix}{sender}{suffix}{color}: {msg}'
+      channelPassword: ''
+      saveLoad: true
+      banned:
+        empty: true
+      muted:
+        empty: true
+    Orc:
+      prefix: '&f['
+      suffix: '&f]'
+      channelColor: '&3'
+      channelFormat: '{color}[{nick}] &f{prefix}{sender}{suffix}{color}: {msg}'
+      channelPassword: ''
+      saveLoad: true
+      banned:
+        empty: true
+      muted:
+        empty: true
+    Elf:
+      prefix: '&f['
+      suffix: '&f]'
+      channelColor: '&3'
+      channelFormat: '{color}[{nick}] &f{prefix}{sender}{suffix}{color}: {msg}'
+      channelPassword: ''
+      saveLoad: true
+      banned:
+        empty: true
+      muted:
+        empty: true
+  WorldChannel:
+    world:
+      prefix: '&f['
+      suffix: '&f]'
+      channelColor: '&4'
+      members:
+      - c52f8ca5-9dd9-4e64-adbf-e118f95bd5ec
+      channelFormat: '{color}[{nick}] &f{prefix}{sender}{suffix}{color}: {msg}'
+      channelPassword: ''
+      saveLoad: true
+      banned:
+        empty: true
+      muted:
+        empty: true
+    world_the_end:
+      prefix: '&f['
+      suffix: '&f]'
+      channelColor: '&4'
+      channelFormat: '{color}[{nick}] &f{prefix}{sender}{suffix}{color}: {msg}'
+      channelPassword: ''
+      saveLoad: true
+      banned:
+        empty: true
+      muted:
+        empty: true
+    world_nether:
+      prefix: '&f['
+      suffix: '&f]'
+      channelColor: '&4'
+      channelFormat: '{color}[{nick}] &f{prefix}{sender}{suffix}{color}: {msg}'
+      channelPassword: ''
+      saveLoad: true
+      banned:
+        empty: true
+      muted:
+        empty: true
+  GlobalChannel:
+    Global:
+      prefix: '&f['
+      suffix: '&f]'
+      channelColor: '&5'
+      members:
+      - c52f8ca5-9dd9-4e64-adbf-e118f95bd5ec
+      channelFormat: '{color}[{nick}] &f{prefix}{sender}{suffix}{color}: {msg}'
+      channelPassword: ''
+      saveLoad: true
+      banned:
+        empty: true
+      muted:
+        empty: true

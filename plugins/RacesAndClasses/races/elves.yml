@@ -1,0 +1,14 @@
+Elf:
+  config:
+    tag: '[Elf]'
+    healthbonus: 0
+    guislot: -1
+    armor: leather,gold,chain
+  traits:
+    FallResistanceTrait:
+      operation: '-'
+      value: 2
+    SprintTrait:
+      duration: 10
+      value: 3
+      cooldown: 60

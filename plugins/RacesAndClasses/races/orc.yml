@@ -1,0 +1,14 @@
+Orc:
+  config:
+    tag: '[Orc]'
+    healthbonus: 10
+    guislot: -1
+    armor: iron,diamond,chain
+  traits:
+    DamageReduceTrait:
+      operation: '*'
+      value: 0.5
+    BerserkerRageTrait:
+      operation: +
+      value: 1
+      cooldown: 30
