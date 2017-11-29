@@ -5,6 +5,7 @@ Human:
     guislot: 0
     armor: leather,gold,chain
   traits:
-    
+    MiningSpeedTrait:
+        value: 5
+        blocks: [STONE,SAND,COBBLESTONE,DIRT])
   permissions:
-

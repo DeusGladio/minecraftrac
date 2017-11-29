@@ -6,7 +6,7 @@ channel:
       channelColor: '&3'
       channelFormat: '{color}[{nick}] &f{prefix}{sender}{suffix}{color}: {msg}'
       channelPassword: ''
-      saveLoad: true
+      saveLoad: false
       banned:
         empty: true
       muted:
@@ -17,7 +17,7 @@ channel:
       channelColor: '&3'
       channelFormat: '{color}[{nick}] &f{prefix}{sender}{suffix}{color}: {msg}'
       channelPassword: ''
-      saveLoad: true
+      saveLoad: false
       banned:
         empty: true
       muted:
@@ -28,7 +28,7 @@ channel:
       channelColor: '&3'
       channelFormat: '{color}[{nick}] &f{prefix}{sender}{suffix}{color}: {msg}'
       channelPassword: ''
-      saveLoad: true
+      saveLoad: false
       banned:
         empty: true
       muted:
@@ -42,7 +42,7 @@ channel:
       - c52f8ca5-9dd9-4e64-adbf-e118f95bd5ec
       channelFormat: '{color}[{nick}] &f{prefix}{sender}{suffix}{color}: {msg}'
       channelPassword: ''
-      saveLoad: true
+      saveLoad: false
       banned:
         empty: true
       muted:
@@ -53,7 +53,7 @@ channel:
       channelColor: '&4'
       channelFormat: '{color}[{nick}] &f{prefix}{sender}{suffix}{color}: {msg}'
       channelPassword: ''
-      saveLoad: true
+      saveLoad: false
       banned:
         empty: true
       muted:
@@ -64,7 +64,7 @@ channel:
       channelColor: '&4'
       channelFormat: '{color}[{nick}] &f{prefix}{sender}{suffix}{color}: {msg}'
       channelPassword: ''
-      saveLoad: true
+      saveLoad: false
       banned:
         empty: true
       muted:
@@ -78,7 +78,7 @@ channel:
       - c52f8ca5-9dd9-4e64-adbf-e118f95bd5ec
       channelFormat: '{color}[{nick}] &f{prefix}{sender}{suffix}{color}: {msg}'
       channelPassword: ''
-      saveLoad: true
+      saveLoad: false
       banned:
         empty: true
       muted:
