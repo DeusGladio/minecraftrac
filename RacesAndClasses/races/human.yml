@@ -5,11 +5,6 @@ Human:
     guislot: 0
     armor: leather,gold,chain
   traits:
-    JumpHeightIncreaseTrait:
-        value: 3
-    FireballTrait:
-        damage: 4
-        range: 10
-        modifiers:
+    
   permissions:
-    - "RaC.race.change"
+
