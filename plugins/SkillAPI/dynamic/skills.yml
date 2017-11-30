@@ -1,0 +1,687 @@
+loaded: 'true'
+HighJump: 
+  name: 'HighJump'
+  type: 'Boost'
+  max-level: '5'
+  skill-req-lvl: '1'
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    incompatible: 
+    - ''
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    points-spent-req-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+    points-spent-req-scale: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'SUGAR'
+  icon-data: '0'
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: ' []'
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Class-b: 
+          type: 'condition'
+          data: 
+            exact: 'True'
+            icon-key: ''
+            class: 'Human'
+          children: ' {}'
+        Potion-c: 
+          type: 'mechanic'
+          data: 
+            potion: 'Jump'
+            counts: 'True'
+            icon-key: ''
+            ambient: 'True'
+            tier-scale: '0'
+            seconds-scale: '1'
+            tier-base: '1'
+            seconds-base: '10'
+          children: ' {}'
+Lightning: 
+  name: 'Lightning'
+  type: 'Single Target'
+  max-level: 5
+  skill-req: 'MagicMissile'
+  skill-req-lvl: 5
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-0.5'
+    incompatible: 
+    - ''
+    cost-scale: '0.7'
+    level-scale: '0'
+    level-base: '10'
+    mana-base: '10'
+    points-spent-req-base: '0'
+    mana-scale: '1'
+    cooldown-base: '3.5'
+    points-spent-req-scale: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'PAPER'
+  icon-data: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Damage: {attr:damage.value}'
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Single-b: 
+          type: 'target'
+          data: 
+            range-scale: '1'
+            range-base: '5'
+            tolerance-scale: '0'
+            tolerance-base: '2'
+            icon-key: ''
+            wall: 'False'
+            group: 'Enemy'
+          children: 
+            Lightning-c: 
+              type: 'mechanic'
+              data: 
+                right-scale: '0'
+                damage: 'False'
+                forward-base: '0'
+                right-base: '0'
+                forward-scale: '0'
+                counts: 'True'
+                icon-key: ''
+              children:  {}
+            Damage-d: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                value-scale: '1'
+                true: 'False'
+                classifier: 'default'
+                icon-key: 'damage'
+                type: 'Damage'
+                value-base: '3'
+              children:  {}
+LightningStorm: 
+  name: 'LightningStorm'
+  type: 'AOE'
+  max-level: '5'
+  skill-req: 'Lightning'
+  skill-req-lvl: '5'
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-0.5'
+    incompatible: 
+    - ''
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '10'
+    mana-base: '20'
+    points-spent-req-base: '0'
+    mana-scale: '0'
+    cooldown-base: '5'
+    points-spent-req-scale: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'PAPER'
+  icon-data: '0'
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: ' []'
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Single-b: 
+          type: 'target'
+          data: 
+            range-scale: '0'
+            range-base: '20'
+            tolerance-scale: '0'
+            tolerance-base: '2'
+            icon-key: ''
+            wall: 'False'
+            group: 'Enemy'
+          children: 
+            Area-c: 
+              type: 'target'
+              data: 
+                caster: 'False'
+                max-base: '99'
+                radius-scale: '0'
+                icon-key: ''
+                radius-base: '3'
+                wall: 'False'
+                group: 'Enemy'
+                max-scale: '0'
+              children: 
+                Lightning-d: 
+                  type: 'mechanic'
+                  data: 
+                    right-scale: '0'
+                    damage: 'True'
+                    forward-base: '0'
+                    right-base: '0'
+                    forward-scale: '0'
+                    counts: 'True'
+                    icon-key: ''
+                  children: ' {}'
+                Damage-e: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'True'
+                    value-scale: '1'
+                    true: 'False'
+                    classifier: 'default'
+                    icon-key: ''
+                    type: 'Damage'
+                    value-base: '3'
+                  children: ' {}'
+MagicMissile: 
+  name: 'MagicMissile'
+  type: 'Projectile'
+  max-level: 5
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-0.5'
+    incompatible: 
+    - ''
+    cost-scale: '0.7'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '5'
+    points-spent-req-base: '0'
+    mana-scale: '1'
+    cooldown-base: '3.5'
+    points-spent-req-scale: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'PAPER'
+  icon-data: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Damage: {attr:damage.value}'
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Particle Projectile-b: 
+          type: 'mechanic'
+          data: 
+            right-scale: '0'
+            forward-base: '0'
+            counts: 'True'
+            upward-scale: '0'
+            lifespan: '3'
+            particles-base: '1'
+            radius-base: '1'
+            speed: '1'
+            frequency: '0.05'
+            arrangement: 'Circle'
+            use-effect: 'False'
+            dx: '0'
+            dy: '0'
+            dz: '0'
+            velocity-base: '0.5'
+            particle: 'Instant Spell'
+            upward-base: '1'
+            pierce: 'False'
+            group: 'Enemy'
+            direction: 'XZ'
+            visible-radius: '25'
+            amount: '1'
+            right-base: '0'
+            forward-scale: '0'
+            radius-scale: '0'
+            particles-scale: '0'
+            amount-base: '1'
+            spread: 'Cone'
+            angle-scale: '0'
+            gravity: '0'
+            icon-key: ''
+            amount-scale: '0'
+            position: '0'
+            angle-base: '1'
+            velocity-scale: '0'
+          children: 
+            Damage-c: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                value-scale: '1'
+                true: 'False'
+                classifier: 'default'
+                icon-key: 'damage'
+                type: 'Damage'
+                value-base: '5'
+              children:  {}
+            Sound-d: 
+              type: 'mechanic'
+              data: 
+                pitch-scale: '0'
+                counts: 'True'
+                volume-base: '100'
+                volume-scale: '0'
+                icon-key: ''
+                pitch-base: '1'
+                version: '1.9+'
+                newsound: 'Entity Experience Orb Pickup'
+              children:  {}
+        Sound-e: 
+          type: 'mechanic'
+          data: 
+            pitch-scale: '0'
+            counts: 'True'
+            volume-base: '100'
+            volume-scale: '0'
+            icon-key: ''
+            pitch-base: '1'
+            version: '1.9+'
+            newsound: 'Entity Firework Twinkle'
+          children:  {}
+        Sound-f: 
+          type: 'mechanic'
+          data: 
+            pitch-scale: '0'
+            counts: 'True'
+            volume-base: '100'
+            volume-scale: '0'
+            icon-key: ''
+            pitch-base: '1'
+            version: '1.9+'
+            newsound: 'Entity Firework Twinkle'
+          children:  {}
+PreciseHit: 
+  name: 'PreciseHit'
+  type: 'DamageBuff'
+  max-level: 5
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-0.5'
+    incompatible: 
+    - ''
+    cost-scale: '0.5'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '5'
+    points-spent-req-base: '0'
+    mana-scale: '1'
+    cooldown-base: '3.5'
+    points-spent-req-scale: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'WOOD_SWORD'
+  icon-data: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Damage: {attr:damage.value}'
+  - '&2Rage: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc:  []
+  components: 
+    Physical Damage: 
+      type: 'trigger'
+      data: 
+        dmg-min: '0'
+        mana: 'True'
+        dmg-max: '999'
+        cooldown: 'True'
+        icon-key: ''
+        type: 'Melee'
+        target: 'False'
+      children: 
+        Damage-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'True'
+            value-scale: '0.5'
+            true: 'True'
+            classifier: 'default'
+            icon-key: 'damage'
+            type: 'Damage'
+            value-base: '1'
+          children:  {}
+        Sound-c: 
+          type: 'mechanic'
+          data: 
+            pitch-scale: '0'
+            counts: 'True'
+            volume-base: '100'
+            volume-scale: '0'
+            icon-key: ''
+            pitch-base: '1'
+            version: '1.9+'
+            newsound: 'Entity Player Attack Crit'
+          children:  {}
+DoubleShot: 
+  name: 'DoubleShot'
+  type: 'Projectile'
+  max-level: 5
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-0.5'
+    incompatible: 
+    - ''
+    cost-scale: '0.5'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '5'
+    points-spent-req-base: '0'
+    mana-scale: '1'
+    cooldown-base: '3.5'
+    points-spent-req-scale: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'BOW'
+  icon-data: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Damage: {attr:damage.value}'
+  - '&2Focus: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc:  []
+  components: 
+    Launch: 
+      type: 'trigger'
+      data: 
+        mana: 'True'
+        cooldown: 'True'
+        icon-key: ''
+        type: 'Arrow'
+      children: 
+        Projectile-b: 
+          type: 'mechanic'
+          data: 
+            right-scale: '0'
+            flaming: 'False'
+            cost: 'One'
+            forward-base: '0'
+            right-base: '0'
+            forward-scale: '0'
+            counts: 'True'
+            upward-scale: '0'
+            amount-base: '1'
+            spread: 'Cone'
+            angle-scale: '0'
+            use-effect: 'False'
+            velocity-base: '3'
+            icon-key: ''
+            amount-scale: '0'
+            position: '0'
+            angle-base: '1'
+            upward-base: '0'
+            projectile: 'Arrow'
+            velocity-scale: '0'
+            group: 'Enemy'
+          children: 
+            Damage-c: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                value-scale: '1'
+                true: 'False'
+                classifier: 'default'
+                icon-key: 'damage'
+                type: 'Damage'
+                value-base: '2'
+              children:  {}
+            Sound-d: 
+              type: 'mechanic'
+              data: 
+                pitch-scale: '0'
+                counts: 'True'
+                volume-base: '100'
+                volume-scale: '0'
+                icon-key: ''
+                pitch-base: '1'
+                version: '1.9+'
+                newsound: 'Entity Arrow Hit'
+              children:  {}
+ArrowRain: 
+  name: 'ArrowRain'
+  type: 'Projectile AOE'
+  max-level: '5'
+  skill-req: 'DoubleShot'
+  skill-req-lvl: '5'
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    incompatible: 
+    - ''
+    cost-scale: '0.5'
+    level-scale: '0'
+    level-base: '5'
+    mana-base: '10'
+    points-spent-req-base: '0'
+    mana-scale: '1'
+    cooldown-base: '20'
+    points-spent-req-scale: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'BOW'
+  icon-data: '0'
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Focus: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: ' []'
+  components: 
+    Physical Damage: 
+      type: 'trigger'
+      data: 
+        dmg-min: '0'
+        mana: 'True'
+        dmg-max: '999'
+        cooldown: 'True'
+        icon-key: ''
+        type: 'Projectile'
+        target: 'False'
+      children: 
+        Location-b: 
+          type: 'target'
+          data: 
+            range-scale: '0'
+            range-base: '5'
+            icon-key: ''
+            ground: 'True'
+          children: 
+            Projectile-c: 
+              type: 'mechanic'
+              data: 
+                right-scale: '0'
+                flaming: 'False'
+                cost: 'All'
+                forward-base: '0'
+                right-base: '0'
+                forward-scale: '0'
+                counts: 'True'
+                upward-scale: '0'
+                amount-base: '3'
+                spread: 'Cone'
+                angle-scale: '0'
+                use-effect: 'False'
+                velocity-base: '3'
+                icon-key: ''
+                amount-scale: '1'
+                position: '0'
+                angle-base: '1'
+                upward-base: '5'
+                projectile: 'Arrow'
+                velocity-scale: '0'
+                group: 'Enemy'
+              children: 
+                Damage-d: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'True'
+                    value-scale: '1'
+                    true: 'False'
+                    classifier: 'default'
+                    icon-key: ''
+                    type: 'Damage'
+                    value-base: '1'
+                  children: ' {}'
+Fireball: 
+  name: 'Fireball'
+  type: 'Projectile'
+  max-level: 5
+  skill-req: 'MagicMissile'
+  skill-req-lvl: 5
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-0.5'
+    incompatible: 
+    - ''
+    cost-scale: '0.7'
+    level-scale: '0'
+    level-base: '10'
+    mana-base: '10'
+    points-spent-req-base: '0'
+    mana-scale: '1'
+    cooldown-base: '3.5'
+    points-spent-req-scale: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'PAPER'
+  icon-data: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Damage: {attr:damage.value}'
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Projectile-b: 
+          type: 'mechanic'
+          data: 
+            right-scale: '0'
+            flaming: 'False'
+            cost: ''
+            forward-base: '0'
+            right-base: '0'
+            forward-scale: '0'
+            counts: 'True'
+            upward-scale: '0'
+            amount-base: '1'
+            spread: 'Cone'
+            angle-scale: '0'
+            use-effect: 'False'
+            velocity-base: '3'
+            icon-key: ''
+            amount-scale: '0'
+            position: '0'
+            angle-base: '1'
+            upward-base: '1'
+            projectile: 'Ghast Fireball'
+            velocity-scale: '0'
+            group: 'Enemy'
+          children: 
+            Damage-c: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                value-scale: '1'
+                true: 'False'
+                classifier: 'default'
+                icon-key: 'damage'
+                type: 'Damage'
+                value-base: '3'
+              children:  {}
+            Sound-d: 
+              type: 'mechanic'
+              data: 
+                pitch-scale: '0'
+                counts: 'True'
+                volume-base: '100'
+                volume-scale: '0'
+                icon-key: ''
+                pitch-base: '1'
+                version: '1.9+'
+                newsound: 'Entity Generic Explode'
+              children:  {}
+        Sound-e: 
+          type: 'mechanic'
+          data: 
+            pitch-scale: '0'
+            counts: 'True'
+            volume-base: '100'
+            volume-scale: '0'
+            icon-key: ''
+            pitch-base: '1'
+            version: '1.9+'
+            newsound: 'Block Fire Ambient'
+          children:  {}

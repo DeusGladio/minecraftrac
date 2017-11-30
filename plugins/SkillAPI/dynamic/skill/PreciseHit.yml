@@ -1,0 +1,68 @@
+PreciseHit: 
+  name: 'PreciseHit'
+  type: 'DamageBuff'
+  max-level: 5
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-0.5'
+    incompatible: 
+    - ''
+    cost-scale: '0.5'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '5'
+    points-spent-req-base: '0'
+    mana-scale: '1'
+    cooldown-base: '3.5'
+    points-spent-req-scale: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'WOOD_SWORD'
+  icon-data: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Damage: {attr:damage.value}'
+  - '&2Rage: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc:  []
+  components: 
+    Physical Damage: 
+      type: 'trigger'
+      data: 
+        dmg-min: '0'
+        mana: 'True'
+        dmg-max: '999'
+        cooldown: 'True'
+        icon-key: ''
+        type: 'Melee'
+        target: 'False'
+      children: 
+        Damage-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'True'
+            value-scale: '0.5'
+            true: 'True'
+            classifier: 'default'
+            icon-key: 'damage'
+            type: 'Damage'
+            value-base: '1'
+          children:  {}
+        Sound-c: 
+          type: 'mechanic'
+          data: 
+            pitch-scale: '0'
+            counts: 'True'
+            volume-base: '100'
+            volume-scale: '0'
+            icon-key: ''
+            pitch-base: '1'
+            version: '1.9+'
+            newsound: 'Entity Player Attack Crit'
+          children:  {}

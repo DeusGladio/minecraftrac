@@ -1,7 +1,0 @@
-trait:
-  damage:
-    wood: 4
-    stone: 5
-    gold: 4
-    iron: 6
-    diamond: 7

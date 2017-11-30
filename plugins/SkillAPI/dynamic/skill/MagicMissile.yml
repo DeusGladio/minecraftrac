@@ -1,0 +1,125 @@
+MagicMissile: 
+  name: 'MagicMissile'
+  type: 'Projectile'
+  max-level: 5
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-0.5'
+    incompatible: 
+    - ''
+    cost-scale: '0.7'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '5'
+    points-spent-req-base: '0'
+    mana-scale: '1'
+    cooldown-base: '3.5'
+    points-spent-req-scale: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'PAPER'
+  icon-data: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Damage: {attr:damage.value}'
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Particle Projectile-b: 
+          type: 'mechanic'
+          data: 
+            right-scale: '0'
+            forward-base: '0'
+            counts: 'True'
+            upward-scale: '0'
+            lifespan: '3'
+            particles-base: '1'
+            radius-base: '1'
+            speed: '1'
+            frequency: '0.05'
+            arrangement: 'Circle'
+            use-effect: 'False'
+            dx: '0'
+            dy: '0'
+            dz: '0'
+            velocity-base: '0.5'
+            particle: 'Instant Spell'
+            upward-base: '1'
+            pierce: 'False'
+            group: 'Enemy'
+            direction: 'XZ'
+            visible-radius: '25'
+            amount: '1'
+            right-base: '0'
+            forward-scale: '0'
+            radius-scale: '0'
+            particles-scale: '0'
+            amount-base: '1'
+            spread: 'Cone'
+            angle-scale: '0'
+            gravity: '0'
+            icon-key: ''
+            amount-scale: '0'
+            position: '0'
+            angle-base: '1'
+            velocity-scale: '0'
+          children: 
+            Damage-c: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                value-scale: '1'
+                true: 'False'
+                classifier: 'default'
+                icon-key: 'damage'
+                type: 'Damage'
+                value-base: '5'
+              children:  {}
+            Sound-d: 
+              type: 'mechanic'
+              data: 
+                pitch-scale: '0'
+                counts: 'True'
+                volume-base: '100'
+                volume-scale: '0'
+                icon-key: ''
+                pitch-base: '1'
+                version: '1.9+'
+                newsound: 'Entity Experience Orb Pickup'
+              children:  {}
+        Sound-e: 
+          type: 'mechanic'
+          data: 
+            pitch-scale: '0'
+            counts: 'True'
+            volume-base: '100'
+            volume-scale: '0'
+            icon-key: ''
+            pitch-base: '1'
+            version: '1.9+'
+            newsound: 'Entity Firework Twinkle'
+          children:  {}
+        Sound-f: 
+          type: 'mechanic'
+          data: 
+            pitch-scale: '0'
+            counts: 'True'
+            volume-base: '100'
+            volume-scale: '0'
+            icon-key: ''
+            pitch-base: '1'
+            version: '1.9+'
+            newsound: 'Entity Firework Twinkle'
+          children:  {}

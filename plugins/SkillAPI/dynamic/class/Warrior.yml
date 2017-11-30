@@ -1,0 +1,30 @@
+Warrior: 
+  name: 'Warrior'
+  prefix: '&6Warrior'
+  group: 'class'
+  mana: '&2Rage'
+  max-level: 30
+  parent: ''
+  needs-permission: 'false'
+  attributes: 
+    health-base: '20'
+    spirit-scale: '0'
+    strength-base: '0'
+    dexterity-base: '0'
+    dexterity-scale: '0'
+    mana-base: '10'
+    health-scale: '0.5'
+    vitality-scale: '0'
+    spirit-base: '0'
+    intelligence-scale: '0'
+    strength-scale: '0'
+    mana-scale: '1'
+    vitality-base: '0'
+    intelligence-base: '0'
+  mana-regen: 1.0
+  tree: 'REQUIREMENT'
+  skills: 
+  - 'PreciseHit'
+  icon: 'WOOD_SWORD'
+  icon-data: 0
+  exp-source: 415

@@ -1,0 +1,73 @@
+Lightning: 
+  name: 'Lightning'
+  type: 'Single Target'
+  max-level: 5
+  skill-req: 'MagicMissile'
+  skill-req-lvl: 5
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-0.5'
+    incompatible: 
+    - ''
+    cost-scale: '0.7'
+    level-scale: '0'
+    level-base: '10'
+    mana-base: '10'
+    points-spent-req-base: '0'
+    mana-scale: '1'
+    cooldown-base: '3.5'
+    points-spent-req-scale: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'PAPER'
+  icon-data: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Damage: {attr:damage.value}'
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Single-b: 
+          type: 'target'
+          data: 
+            range-scale: '1'
+            range-base: '5'
+            tolerance-scale: '0'
+            tolerance-base: '2'
+            icon-key: ''
+            wall: 'False'
+            group: 'Enemy'
+          children: 
+            Lightning-c: 
+              type: 'mechanic'
+              data: 
+                right-scale: '0'
+                damage: 'False'
+                forward-base: '0'
+                right-base: '0'
+                forward-scale: '0'
+                counts: 'True'
+                icon-key: ''
+              children:  {}
+            Damage-d: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                value-scale: '1'
+                true: 'False'
+                classifier: 'default'
+                icon-key: 'damage'
+                type: 'Damage'
+                value-base: '3'
+              children:  {}
