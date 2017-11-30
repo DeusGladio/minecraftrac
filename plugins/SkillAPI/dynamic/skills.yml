@@ -642,3 +642,56 @@ Fireball:
             version: '1.9+'
             newsound: 'Block Fire Ambient'
           children:  {}
+SelfHeal: 
+  name: 'SelfHeal'
+  type: 'Self'
+  max-level: 5
+  skill-req: 'MagicMissile'
+  skill-req-lvl: 5
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-10'
+    incompatible: 
+    - ''
+    cost-scale: '0.7'
+    level-scale: '0'
+    level-base: '10'
+    mana-base: '20'
+    points-spent-req-base: '0'
+    mana-scale: '-1'
+    cooldown-base: '150'
+    points-spent-req-scale: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'PAPER'
+  icon-data: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Self-b: 
+          type: 'target'
+          data: 
+            icon-key: ''
+          children: 
+            Heal-c: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                value-scale: '1'
+                icon-key: ''
+                type: 'Health'
+                value-base: '4'
+              children:  {}

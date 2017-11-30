@@ -27,6 +27,7 @@ Mage:
   - 'MagicMissile'
   - 'Lightning'
   - 'Fireball'
+  - 'SelfHeal'
   icon: 'STICK'
   icon-data: 0
   exp-source: 415

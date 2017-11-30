@@ -77,6 +77,9 @@ level:
   sender: 'ANYONE'
   enabled: 'true'
   cooldown: 0
+  messages: 
+    not-player: '&cThat is not a valid player name'
+    received-level: '&2You have received &6{level} levels &2from &6{player}'
 list: 
   name: 'list'
   description: 'Displays accounts'
