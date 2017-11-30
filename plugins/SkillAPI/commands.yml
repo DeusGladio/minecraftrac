@@ -175,6 +175,8 @@ unbind:
   sender: 'PLAYER_ONLY'
   enabled: 'true'
   cooldown: 0
+  messages: 
+    skill-unbound: '&6{skill} &2has been unbound from &6{item}'
 forceaccount: 
   name: 'forceaccount'
   description: "Changes player's account"

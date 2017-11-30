@@ -1,23 +1,17 @@
-limit: 3
+limit: 10
 active: 1
-health: 19.160003662109375
-mana: 20.0
+health: 20.0
+mana: 10.0
 accounts: 
   acc1: 
     classes: 
-      Mage: 
-        level: 11
+      Archer: 
+        level: 1
         points: 0
-        exp: 42.0
+        exp: 15.0
     skills: 
-      Lightning: 
-        level: 0
-        points: 0
-      MagicMissile: 
-        level: 5
-        points: 0
-      Fireball: 
+      DoubleShot: 
         level: 1
         points: 0
     binds: 
-      STICK: 'MagicMissile'
+      BOW: 'DoubleShot'

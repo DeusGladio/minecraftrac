@@ -440,62 +440,19 @@ DoubleShot:
   - '&2Cooldown: {attr:cooldown}'
   desc:  []
   components: 
-    Launch: 
+    Cast: 
       type: 'trigger'
       data: 
-        mana: 'True'
-        cooldown: 'True'
         icon-key: ''
-        type: 'Arrow'
       children: 
-        Projectile-b: 
+        Passive-b: 
           type: 'mechanic'
           data: 
-            right-scale: '0'
-            flaming: 'False'
-            cost: 'One'
-            forward-base: '0'
-            right-base: '0'
-            forward-scale: '0'
             counts: 'True'
-            upward-scale: '0'
-            amount-base: '1'
-            spread: 'Cone'
-            angle-scale: '0'
-            use-effect: 'False'
-            velocity-base: '3'
             icon-key: ''
-            amount-scale: '0'
-            position: '0'
-            angle-base: '1'
-            upward-base: '0'
-            projectile: 'Arrow'
-            velocity-scale: '0'
-            group: 'Enemy'
-          children: 
-            Damage-c: 
-              type: 'mechanic'
-              data: 
-                counts: 'True'
-                value-scale: '1'
-                true: 'False'
-                classifier: 'default'
-                icon-key: 'damage'
-                type: 'Damage'
-                value-base: '2'
-              children:  {}
-            Sound-d: 
-              type: 'mechanic'
-              data: 
-                pitch-scale: '0'
-                counts: 'True'
-                volume-base: '100'
-                volume-scale: '0'
-                icon-key: ''
-                pitch-base: '1'
-                version: '1.9+'
-                newsound: 'Entity Arrow Hit'
-              children:  {}
+            seconds-scale: '0'
+            seconds-base: '5'
+          children:  {}
 ArrowRain: 
   name: 'ArrowRain'
   type: 'Projectile AOE'
